@@ -88,22 +88,22 @@ def test_calc_local_correlations(session_shared_datadir):
         # Test calculate all correlations
         for equivalent_index in range(local_clexulator.n_equivalents()):
             correlations = clex.calc_local_correlations(
-                local_clexulator,
-                dof_values,
-                supercell_neighbor_list,
-                unitcell_index,
-                equivalent_index,
+                local_clexulator=local_clexulator,
+                config_dof_values=dof_values,
+                supercell_neighbor_list=supercell_neighbor_list,
+                unitcell_index=unitcell_index,
+                equivalent_index=equivalent_index,
             )
             assert isinstance(correlations, np.ndarray)
             assert len(correlations) == 6
             # print(unitcell_index, equivalent_index, correlations.tolist())
 
             restricted = clex.calc_local_correlations(
-                local_clexulator,
-                dof_values,
-                supercell_neighbor_list,
-                unitcell_index,
-                equivalent_index,
+                local_clexulator=local_clexulator,
+                config_dof_values=dof_values,
+                supercell_neighbor_list=supercell_neighbor_list,
+                unitcell_index=unitcell_index,
+                equivalent_index=equivalent_index,
                 indices=[1, 2],
             )
             assert isinstance(restricted, np.ndarray)

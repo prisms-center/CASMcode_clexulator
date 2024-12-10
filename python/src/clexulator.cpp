@@ -1309,10 +1309,10 @@ PYBIND11_MODULE(_clexulator, m) {
 
   m.def(
       "calc_local_correlations",
-      [](clexulator::LocalClexulatorWrapper const &wrapper,
-         clexulator::ConfigDoFValues const &config_dof_values,
-         std::shared_ptr<clexulator::SuperNeighborList const> const
+      [](std::shared_ptr<clexulator::SuperNeighborList const> const
              &supercell_neighbor_list,
+         clexulator::LocalClexulatorWrapper const &wrapper,
+         clexulator::ConfigDoFValues const &config_dof_values,
          Index unitcell_index, Index equivalent_index,
          std::optional<std::vector<unsigned int>> indices) {
         if (wrapper.local_clexulator->size() == 0) {
