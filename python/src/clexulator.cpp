@@ -1309,10 +1309,10 @@ PYBIND11_MODULE(_clexulator, m) {
 
   m.def(
       "calc_local_correlations",
-      [](clexulator::LocalClexulatorWrapper const &wrapper,
-         clexulator::ConfigDoFValues const &config_dof_values,
-         std::shared_ptr<clexulator::SuperNeighborList const> const
+      [](std::shared_ptr<clexulator::SuperNeighborList const> const
              &supercell_neighbor_list,
+         clexulator::LocalClexulatorWrapper const &wrapper,
+         clexulator::ConfigDoFValues const &config_dof_values,
          Index unitcell_index, Index equivalent_index,
          std::optional<std::vector<unsigned int>> indices) {
         if (wrapper.local_clexulator->size() == 0) {
@@ -1340,12 +1340,12 @@ PYBIND11_MODULE(_clexulator, m) {
 
       Parameters
       ----------
+      supercell_neighbor_list: SuperNeighborList
+          The SuperNeighborList for the supercell consistent with `config_dof_values`.
       local_clexulator: LocalClexulator
           The LocalClexulator used to evaluate local basis functions
       config_dof_values: ConfigDoFValues
           Configuration degree of freedom (DoF) values input to the basis functions.
-      supercell_neighbor_list: SuperNeighborList
-          The SuperNeighborList for the supercell consistent with `config_dof_values`.
       unitcell_index: int
           Linear unit cell index specifying in which unit cell to evaluate the
           local correlations.
