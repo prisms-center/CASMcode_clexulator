@@ -111,7 +111,7 @@ def test_calc_local_correlations(session_shared_datadir):
             assert np.allclose(restricted[0], [0.0])
             assert np.allclose(correlations[1:3], restricted[1:3])
             assert np.allclose(restricted[3:], [0.0, 0.0, 0.0])
-            # print("(*)", unitcell_index, equivalent_index, restricted.tolist())
+            #  print("(*)", unitcell_index, equivalent_index, restricted.tolist())
 
     corr = clex.LocalCorrelations(
         supercell_neighbor_list=supercell_neighbor_list,
