@@ -85,6 +85,7 @@ def test_calc_local_correlations(session_shared_datadir):
     dof_values.set_occ(n_unitcells * 2, 1)
 
     for unitcell_index in range(n_unitcells):
+        # Test calculate all correlations
         for equivalent_index in range(local_clexulator.n_equivalents()):
             correlations = clex.calc_local_correlations(
                 local_clexulator,
@@ -95,7 +96,22 @@ def test_calc_local_correlations(session_shared_datadir):
             )
             assert isinstance(correlations, np.ndarray)
             assert len(correlations) == 6
-            print(unitcell_index, equivalent_index, correlations.tolist())
+            # print(unitcell_index, equivalent_index, correlations.tolist())
+
+            restricted = clex.calc_local_correlations(
+                local_clexulator,
+                dof_values,
+                supercell_neighbor_list,
+                unitcell_index,
+                equivalent_index,
+                indices=[1, 2],
+            )
+            assert isinstance(restricted, np.ndarray)
+            assert len(restricted) == 6
+            assert np.allclose(restricted[0], [0.0])
+            assert np.allclose(correlations[1:3], restricted[1:3])
+            assert np.allclose(restricted[3:], [0.0, 0.0, 0.0])
+            # print("(*)", unitcell_index, equivalent_index, restricted.tolist())
 
     corr = clex.LocalCorrelations(
         supercell_neighbor_list=supercell_neighbor_list,
