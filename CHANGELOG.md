@@ -6,6 +6,17 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 
+## [2.0a7] - 2024-12-11
+
+### Fixed
+
+- Fixed `calc_local_correlations` arguments and docs
+
+### Changed
+
+- Build macos x86_64 wheels with macos-13 Github Actions runner
+
+
 ## [2.0a6] - 2024-07-26
 
 ### Fixed
