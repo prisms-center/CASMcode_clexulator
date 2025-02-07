@@ -258,7 +258,7 @@ def make_cluster_expansion(
                 "xtal_prim is None"
             )
         config_dof_values = _clex.make_default_config_dof_values(
-            xtal_prim=xtal_prim, n_unitcells=supercell_neighbor_list.n_unitcells()
+            xtal_prim=xtal_prim, n_unitcells=supercell_neighbor_list.n_supercell_unitcells()
         )
     if cluster_expansion_type == "periodic":
         cluster_expansion = _clex.ClusterExpansion(
