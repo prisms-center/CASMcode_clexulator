@@ -1745,7 +1745,7 @@ PYBIND11_MODULE(_clexulator, m) {
       .def_readwrite("index", &clexulator::SparseCoefficients::index, R"pbdoc(
         list[int]: Indices of basis functions with non-zero coefficients
         )pbdoc")
-      .def_readwrite("value", &clexulator::SparseCoefficients::index, R"pbdoc(
+      .def_readwrite("value", &clexulator::SparseCoefficients::value, R"pbdoc(
         list[float]: Expansion coefficients, for the basis functions specified by `index`
         )pbdoc")
       .def_static(
