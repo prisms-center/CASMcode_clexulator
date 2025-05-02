@@ -1,6 +1,7 @@
 """
 Tests the code snippets in usage/neighbor_lists.rst
 """
+
 import libcasm.xtal as xtal
 import libcasm.xtal.prims as xtal_prims
 from libcasm.clexulator import make_default_prim_neighbor_list

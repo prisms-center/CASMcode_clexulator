@@ -1,4 +1,5 @@
 """libcasm.clexulator: Evaluate functions of configuration"""
+
 from ._clexulator import (
     Clexulator,
     ClusterExpansion,
