@@ -221,7 +221,12 @@ def make_cluster_expansion(
     """
     if supercell_neighbor_list is None:
         if prim_neighbor_list is None:
-            prim_neighbor_list = _clex.PrimNeighborList()
+            if xtal_prim is None:
+                raise Exception(
+                    "Error in make_cluster_expansion: xtal_prim is None and "
+                    "prim_neighbor_list is None"
+                )
+            prim_neighbor_list = _clex.make_default_prim_neighbor_list(xtal_prim)
         if transformation_matrix_to_super is None:
             raise Exception(
                 "Error in make_cluster_expansion: supercell_neighbor_list is None and "
@@ -232,7 +237,12 @@ def make_cluster_expansion(
         )
     if clexulator is None:
         if prim_neighbor_list is None:
-            prim_neighbor_list = _clex.PrimNeighborList()
+            if xtal_prim is None:
+                raise Exception(
+                    "Error in make_cluster_expansion: xtal_prim is None and "
+                    "prim_neighbor_list is None"
+                )
+            prim_neighbor_list = _clex.make_default_prim_neighbor_list(xtal_prim)
         if cluster_expansion_type in ["periodic", "multi_periodic"]:
             clexulator = _clex.make_clexulator(
                 source=clexulator_source,
