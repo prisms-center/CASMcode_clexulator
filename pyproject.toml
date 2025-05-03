@@ -20,7 +20,7 @@ authors = [
 description = "CASM clexulator"
 readme = "README.md"
 requires-python = ">=3.9,<3.14"
-license = {text = "LGPL2.1+"}
+license = "LGPL-2.1-or-later"
 classifiers = [
     "Development Status :: 5 - Production/Stable",
     "Programming Language :: Python :: 3",
