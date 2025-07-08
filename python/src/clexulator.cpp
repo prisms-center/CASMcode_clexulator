@@ -1259,10 +1259,10 @@ PYBIND11_MODULE(_clexulator, m) {
 
   m.def(
       "calc_per_unitcell_correlations",
-      [](std::shared_ptr<clexulator::Clexulator> const &clexulator,
-         clexulator::ConfigDoFValues const &config_dof_values,
-         std::shared_ptr<clexulator::SuperNeighborList const> const
+      [](std::shared_ptr<clexulator::SuperNeighborList const> const
              &supercell_neighbor_list,
+	 std::shared_ptr<clexulator::Clexulator> const &clexulator,
+         clexulator::ConfigDoFValues const &config_dof_values,
          std::optional<std::vector<unsigned int>> indices) {
         if (!clexulator->initialized()) {
           throw std::runtime_error(
@@ -1287,12 +1287,12 @@ PYBIND11_MODULE(_clexulator, m) {
 
       Parameters
       ----------
+      supercell_neighbor_list: SuperNeighborList
+          The SuperNeighborList for the supercell consistent with `config_dof_values`.
       clexulator: Clexulator
           The Clexulator used to evaluate basis functions
       config_dof_values: ConfigDoFValues
           Configuration degree of freedom (DoF) values input to the basis functions.
-      supercell_neighbor_list: SuperNeighborList
-          The SuperNeighborList for the supercell consistent with `config_dof_values`.
       indices: Optional[list[int]] = None
           If provided, only calculate the basis functions with corresponding
           indices. The same size correlation array is always returned, but other
