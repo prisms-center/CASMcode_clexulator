@@ -54,9 +54,9 @@ TEST(VersionTest, TestClexulatorVersion) {
   EXPECT_EQ(v_match.size(), 6);
   EXPECT_EQ(v_match[1].str(), "2");
   EXPECT_EQ(v_match[2].str(), "3");
-  EXPECT_EQ(v_match[3].str(), "0");
+  EXPECT_EQ(v_match[3].str(), "1");
   EXPECT_EQ(v_match[4].str(), "");
 
-  EXPECT_EQ(CASM::clexulator::version(), "2.3.0");
+  EXPECT_EQ(CASM::clexulator::version(), "2.3.1");
   EXPECT_EQ(CASM::clexulator::version(), casm_clexulator_version());
 }

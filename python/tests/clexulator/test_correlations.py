@@ -33,7 +33,7 @@ def test_calc_per_unitcell_correlations(session_shared_datadir):
     correlations = clex.calc_per_unitcell_correlations(
         supercell_neighbor_list=supercell_neighbor_list,
         clexulator=clexulator,
-        config_dof_values=dof_values
+        config_dof_values=dof_values,
     )
     assert isinstance(correlations, np.ndarray)
     assert len(correlations) == 74
