@@ -3,7 +3,7 @@ import os
 # -- package specific configuration --
 project = "libcasm-clexulator"
 version = "2.3"  # The short X.Y version.
-release = "2.3.0"  # The full version, including alpha/beta/rc tags.
+release = "2.3.1"  # The full version, including alpha/beta/rc tags.
 project_desc = "CASM cluster expansion calculator (clexulator) module"
 logo_text = "libcasm-clexulator"
 github_url = "https://github.com/prisms-center/CASMcode_clexulator/"
