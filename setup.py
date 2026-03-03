@@ -2,7 +2,7 @@ from skbuild import setup
 
 setup(
     name="libcasm-clexulator",
-    version="2.3.1",
+    version="3.0a1",
     packages=["libcasm", "libcasm.clexulator"],
     package_dir={"": "python"},
     cmake_install_dir="python/libcasm",

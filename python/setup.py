@@ -1,13 +1,13 @@
 import os
 
-__version__ = "2.3.1"
+__version__ = "3.0a1"
 
 # Available at setup time due to pyproject.toml
 from pybind11.setup_helpers import Pybind11Extension, build_ext
 from setuptools import setup
 
-# If on macosx, target 10.15 (ignored otherwise)
-os.environ["MACOSX_DEPLOYMENT_TARGET"] = "10.15"
+# If on macosx, target 11.0 (ignored otherwise)
+os.environ["MACOSX_DEPLOYMENT_TARGET"] = "11.0"
 
 # extra_compile_args
 extra_compile_args = [
@@ -36,7 +36,6 @@ extra_link_args = [
     "-lcasm_crystallography",
     "-lcasm_clexulator",
 ]
-
 
 # The main interface is through Pybind11Extension.
 # * You can add cxx_std=11/14/17, and then build_ext can be removed.
@@ -71,7 +70,6 @@ ext_modules = [
         **ext_modules_params,
     ),
 ]
-
 
 setup(
     name="libcasm-clexulator",
