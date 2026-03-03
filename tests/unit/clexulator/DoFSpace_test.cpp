@@ -883,7 +883,7 @@ TEST_F(DebugLocalDoFSpaceTest, Test5) {
   ScelEnumProps enumeration_params{begin_volume, end_volume, dirs,
                                    generating_matrix};
   double tol = prim->lattice().tol();
-  auto fg = xtal::make_factor_group(*prim, tol);
+  auto fg = xtal::make_factor_group(*prim);
   auto crystal_point_group = xtal::make_crystal_point_group(fg, tol);
   SuperlatticeEnumerator enumerator{prim->lattice(), crystal_point_group,
                                     enumeration_params};
