@@ -41,7 +41,7 @@ jobs:
 
       - name: upload libcasm-clexulator-macos-latest-dist
         if: always()
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@v7
         with:
           name: libcasm-clexulator-macos-latest-dist
           path: dist
